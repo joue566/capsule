@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>كبسولة الشغل 💼</title>
+
+<style>
+
+  body {
+
+    font-family: "Tajawal", sans-serif;
+
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+
+    text-align: center;
+
+    padding: 20px;
+
+    color: #fff;
+
+  }
+
+  h1, h2 {
+
+    color: #f1f1f1;
+
+  }
+
+  .section {
+
+    background: #1e1e1e;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 4px 10px rgba(255,255,255,0.1);
+
+    margin-bottom: 25px;
+
+  }
+
+  button {
+
+    background: #8b5cf6;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 10px 15px;
+
+    margin: 5px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+  }
+
+  button:hover {
+
+    background: #7c3aed;
+
+  }
+
+  .link-list a {
+
+    display: block;
+
+    margin: 10px 0;
+
+    color: #60a5fa;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+  }
+
+  .script-box {
+
+    background: #2a2a2a;
+
+    border-radius: 10px;
+
+    padding: 10px;
+
+    margin-bottom: 10px;
+
+    text-align: left;
+
+  }
+
+  .copy-btn {
+
+    background: #10b981;
+
+    padding: 5px 10px;
+
+    border-radius: 8px;
+
+    margin-right: 10px;
+
+    border: none;
+
+  }
+
+  .copy-btn:hover {
+
+    background: #059669;
+
+  }
+
+  #timer {
+
+    font-size: 24px;
+
+    margin: 10px 0;
+
+    font-weight: bold;
+
+    color: #a78bfa;
+
+  }
+
+</style>
+
+</head>
+
+<body>
+
+<h1>🧠 كبسولة الشغل - فريق الموديريشن 💬</h1>
+
+<div class="section">
+
+  <h2>⏱️ عداد البريك</h2>
+
+  <div id="timer">00:00</div>
+
+  <button id="startBtn">Start Break</button>
+
+  <button id="stopBtn">Stop Break</button>
+
+</div>
+
+<div class="section">
+
+  <h2>📎 لينكات مهمة</h2>
+
+  <div class="link-list">
+
+    <a href="https://docs.google.com/spreadsheets/d/12Wb630C701xvdxP-w4OPh0WUgqGxHCFYMydOvb8jk4E/edit?gid=579375431#gid=579375431" target="_blank">📊 Google Sheet</a>
+
+    <a href="https://local-admin.soulchill.live/#/watchmen/artificialPunish" target="_blank">🖥️ Local System</a>
+
+    <a href="https://docs.google.com/spreadsheets/d/1KQA5EjNkofhv4XWZJWKYZYTCKr7fzxjBImuj1DP0GXE/edit?gid=1160221890" target="_blank">🕒 Attendance</a>
+
+  </div>
+
+</div>
+
+<div class="section">
+
+  <h2>📋 سكريبتات جاهزة</h2>
+
+  
+
+  <div class="script-box">
+
+    <span>🔹 Unban Request</span>
+
+    <button class="copy-btn" onclick="copyText('unbanScript')">Copy Script</button>
+
+    <p id="unbanScript">
+
+Unban request  
+
+UID :  
+
+Request :  
+
+Reason :  
+
+Group :
+
+    </p>
+
+  </div>
+
+  <div class="script-box">
+
+    <span>🔹 Supporter Follow Up</span>
+
+    <button class="copy-btn" onclick="copyText('supporterScript')">Copy Script</button>
+
+    <p id="supporterScript">
+
+Supporter follow up  
+
+kindly contact this supporter as soon as possible  
+
+he is under your management and needs help
+
+    </p>
+
+  </div>
+
+</div>
+
+<script>
+
+let timerInterval;
+
+let seconds = 0;
+
+document.getElementById('startBtn').addEventListener('click', () => {
+
+  clearInterval(timerInterval);
+
+  timerInterval = setInterval(() => {
+
+    seconds++;
+
+    let mins = Math.floor(seconds / 60);
+
+    let secs = seconds % 60;
+
+    document.getElementById('timer').textContent =
+
+      (mins < 10 ? "0" : "") + mins + ":" + (secs < 10 ? "0" : "") + secs;
+
+  }, 1000);
+
+});
+
+document.getElementById('stopBtn').addEventListener('click', () => {
+
+  clearInterval(timerInterval);
+
+});
+
+function copyText(id) {
+
+  const text = document.getElementById(id).innerText;
+
+  navigator.clipboard.writeText(text);
+
+  alert("✅ النص اتنسخ!");
+
+}
+
+</script>
+
+</body>
+
+</html>
